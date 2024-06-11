@@ -1,0 +1,20 @@
+Novo Filme Cadastrado: Os Vingadores
+Diretor: Joss Whedon
+Data de Estreia: 08/08/2024
+Horario de Exibicao: 18:00
+Valor do Ingresso: 25.0
+Sala: Sala 1
+Capacidade da Sala: 10
+Generos: Ação, Aventura, Ficção Científica
+Classificacao Indicativa: 12
+
+Novo Filme Cadastrado: Godzilla and Kong: The new Imperi
+Diretor: Japones e americano
+Data de Estreia: 06/09/2025
+Horario de Exibicao: 20:00
+Valor do Ingresso: 75.0
+Sala: Sala 3
+Capacidade da Sala: 100
+Generos: Ação, Aventura, Ficção Científica, Monstros, Drama
+Classificacao Indicativa: 14
+
