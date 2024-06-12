@@ -43,7 +43,6 @@ def cadastrar_cliente(usuarios):
         "senha": senha,
         "idade": idade,
         "carteira_estudante": carteira_estudante,
-        "cupom_cinema": False,
         "ingressos_comprados": []
     })
     print(f"Usuario '{nome}' cadastrado com sucesso!")
@@ -52,7 +51,6 @@ def cadastrar_cliente(usuarios):
         "senha": senha,
         "idade": idade,
         "carteira_estudante": carteira_estudante,
-        "cupom_cinema": False,
         "ingressos_comprados": []
         }
 # ============================================================================================#
