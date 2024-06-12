@@ -3,32 +3,20 @@ import pessoas_perfil
 def exibir_filmes_em_cartaz(filmes):
     filmes_ordenados = sorted(filmes, key=lambda x: x['ingressos_vendidos'], reverse=True)
 
-    limite_titulo = 20
-    limite_diretor = 15
-    limite_generos = 20
-
     def truncar(texto, limite):
         return texto if len(texto) <= limite else texto[:limite - 3] + '...'
 
-   
-    CABECALHO = '\033[95m'
-    AZUL = '\033[94m'
-    VERDE = '\033[92m'
-    AMARELO = '\033[93m'
-    NEGRITO = '\033[1m'
-    RESET = '\033[0m'
-
-   
-    print(f"\n{CABECALHO}{NEGRITO}Filmes em Cartaz:{RESET}")
-    print("=--="*20)
-    print(f"| {CABECALHO}{NEGRITO}{'Titulo':<{limite_titulo}}{RESET} | {CABECALHO}{NEGRITO}{'Diretor':<{limite_diretor}}{RESET} | {CABECALHO}{NEGRITO}{'Generos':<{limite_generos}}{RESET} |")
-    print("=--="*20)
+    print(f"\n\033[1:95mFilmes em Cartaz: \033[m")
+    print("=--=" * 17)
+    print(f"| \033[1:95m{'Titulo':<{20}}\033[m | \033[1:95m{'Diretor':<{15}}\033[m | \033[1:95m{'Generos':<{20}}\033[m |")
+    print("=--=" * 17)
     for filme in filmes_ordenados[:5]:
-        titulo = truncar(filme['titulo'], limite_titulo)
-        diretor = truncar(filme['diretor'], limite_diretor)
-        generos = truncar(', '.join(filme['generos']), limite_generos)
-        print(f"| {AZUL}{titulo:<{limite_titulo}}{RESET} | {VERDE}{diretor:<{limite_diretor}}{RESET} | {AMARELO}{generos:<{limite_generos}}{RESET} |")
-    print("---------------------------------------------------------------------")
+        titulo = truncar(filme['titulo'], 20)
+        diretor = truncar(filme['diretor'], 15)
+        generos = truncar(', '.join(filme['generos']), 20)
+        print(
+            f"| \033[94m{titulo:<{20}}\033[m | \033[92m{diretor:<{15}}\033[m | \033[93m{generos:<{20}}\033[m |")
+    print("--------------------------------------------------------------------")
 # ============================================================================================#
 
 
