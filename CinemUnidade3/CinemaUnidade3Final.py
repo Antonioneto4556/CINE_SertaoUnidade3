@@ -52,33 +52,26 @@ while True:
                 cinemenu.menu_administrativo()
                 sub_opcao = input("Escolha uma opção: ").strip()
                 if sub_opcao == '1':
-                    novo_filme = gerenciando_filmes.cadastrar_filme(filmes, salas_disponiveis)
-                    if novo_filme:
-                        print("Filme cadastrado com sucesso.")
+                    gerenciando_filmes.cadastrar_filme(filmes, salas_disponiveis)
+                    print("Filme cadastrado com sucesso.")
                 elif sub_opcao == '2':
-                    filme_atualizado = gerenciando_filmes.atualizar_filme(filmes, salas_disponiveis)
-                    if filme_atualizado:
-                        print("Filme atualizado com sucesso.")
+                    gerenciando_filmes.atualizar_filme(filmes, salas_disponiveis)
+                    print("Filme atualizado com sucesso.")
                 if sub_opcao == '3':
-                    filme_escolhido = gerenciando_filmes.buscar_filmes(filmes)
-                    if filme_escolhido:
-                        print("Filme selecionado salvo.")
+                    gerenciando_filmes.buscar_filmes(filmes)
+                    print("Filme selecionado salvo.")
                 elif sub_opcao == '4':
-                    filme_expurgado = gerenciando_filmes.remover_filme(filmes, salas_disponiveis)
-                    if filme_expurgado:
-                        print("Filme removido com sucesso.")
+                    gerenciando_filmes.remover_filme(filmes, salas_disponiveis)
+                    print("Filme removido com sucesso.")
                 elif sub_opcao == '5':
-                    filmes_listados = gerenciando_filmes.listar_filmes(filmes)
-                    if filmes_listados:
-                        print("Filmes listados com sucesso.")
+                    gerenciando_filmes.listar_filmes(filmes)
+                    print("Filmes listados com sucesso.")
                 elif sub_opcao == '6':
-                    salas_update = gerenciando_filmes.gerenciar_salas(filmes)
-                    if salas_update:
-                        print("Sala do filme atualizada com sucesso.")
+                    gerenciando_filmes.gerenciar_salas(filmes)
+                    print("Sala do filme atualizada com sucesso.")
                 elif sub_opcao == '7':
-                    generos_update = gerenciando_filmes.gerenciar_generos(filmes, admin_logado)
-                    if generos_update:
-                        print("Generos do filme atualizados com sucesso.")
+                    gerenciando_filmes.gerenciar_generos(filmes, admin_logado)
+                    print("Generos do filme atualizados com sucesso.")
                 elif sub_opcao == '8':
                     gerenciando_filmes.visualizar_vendas_ingressos(filmes)
                 elif sub_opcao == '9':
