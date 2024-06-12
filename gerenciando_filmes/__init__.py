@@ -52,7 +52,7 @@ def cadastrar_filme(filmes, salas_disponiveis):
 
     print(f"Filme '{titulo}' cadastrado com sucesso!")
 
-    # Salvar o filme em um arquivo (exemplo)
+    
     with open("filmes.txt", "a") as arquivo:
         arquivo.write(f"Novo Filme Cadastrado: {titulo}\n")
         arquivo.write(f"Diretor: {diretor}\n")
@@ -119,7 +119,7 @@ def atualizar_filme(filmes, salas_disponiveis):
             })
             print("Dados do filme atualizados com sucesso!")
 
-            # Atualizar o arquivo com as informações atualizadas do filme
+           
             with open("filmes.txt", "w") as arquivo:
                 for f in filmes:
                     arquivo.write(f"Novo Filme Cadastrado: {f['titulo']}\n")
@@ -232,8 +232,6 @@ def listar_filmes(filmes):
         print("Opcao invalida.")
 # ============================================================================================#
 
-
-# cinema/gerenciando_filmes.py
 
 def gerenciar_salas(salas_disponiveis):
     while True:
