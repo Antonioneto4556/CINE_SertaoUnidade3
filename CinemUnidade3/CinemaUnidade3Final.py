@@ -96,11 +96,7 @@ while True:
         registramento.cadastro(usuarios, admin_logado)
 
     elif escolha == '5':
-        tipo, usuario_logado = logando.entrar(usuarios)
-        if tipo == "cliente":
-            cliente_logado = usuario_logado
-        elif tipo == "admin":
-            admin_logado = usuario_logado
+        logando.entrar(usuarios)
 
     elif escolha == '6':
         if cliente_logado:
