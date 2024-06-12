@@ -14,7 +14,7 @@ def entrar(usuarios):
                     print(f"\033[92mCliente {nome} logado com sucesso.\033[m")
                     return "cliente", cliente
             print("\033[91mNome ou senha incorretos.\033[m")
-            return "cliente", None
+            return "cliente"
 
         elif opcao == '2':
             nome = input("Nome: ")
@@ -24,13 +24,13 @@ def entrar(usuarios):
                     print(f"\033[92mAdmin {nome} logado com sucesso.\033[m")
                     return "admin", admin
             print("\033[91mNome ou senha incorretos.\033[m")
-            return "admin", None
+            return "admin"
 
         elif opcao == '3':
-            return None, None
+            return None
 
         elif opcao == '4':
-            return "voltar", None
+            break
 
         else:
             print(f"\033[1:7:91:40m Opcao ({opcao}) invalida    \033[m")
