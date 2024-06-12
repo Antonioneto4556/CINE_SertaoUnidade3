@@ -19,7 +19,7 @@ def exibir_filmes_em_cartaz(filmes):
     NEGRITO = '\033[1m'
     RESET = '\033[0m'
 
-    # Exibir apenas os 5 primeiros filmes (os mais populares)
+   
     print(f"\n{CABECALHO}{NEGRITO}Filmes em Cartaz:{RESET}")
     print("=--="*20)
     print(f"| {CABECALHO}{NEGRITO}{'Titulo':<{limite_titulo}}{RESET} | {CABECALHO}{NEGRITO}{'Diretor':<{limite_diretor}}{RESET} | {CABECALHO}{NEGRITO}{'Generos':<{limite_generos}}{RESET} |")
