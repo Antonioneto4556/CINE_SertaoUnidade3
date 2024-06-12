@@ -10,12 +10,11 @@ def exibir_filmes_em_cartaz(filmes):
     def truncar(texto, limite):
         return texto if len(texto) <= limite else texto[:limite - 3] + '...'
 
-    # Cores ANSI
+   
     CABECALHO = '\033[95m'
     AZUL = '\033[94m'
     VERDE = '\033[92m'
     AMARELO = '\033[93m'
-    VERMELHO = '\033[91m'
     NEGRITO = '\033[1m'
     RESET = '\033[0m'
 
