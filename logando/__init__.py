@@ -30,7 +30,7 @@ def entrar(usuarios):
             return None, None
 
         elif opcao == '4':
-            break
+            return "voltar", None
 
         else:
             print(f"\033[1:7:91:40m Opcao ({opcao}) invalida    \033[m")
