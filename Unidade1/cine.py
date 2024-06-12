@@ -1,5 +1,3 @@
-#Aluno: Antonio Vieria da S. Neto
-
 # ===== APRESENTAÇÃO DO PROGRAMA ===== #
 
 from time import sleep
