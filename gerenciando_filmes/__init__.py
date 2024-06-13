@@ -9,14 +9,19 @@ def cadastrar_filme(filmes, salas_disponiveis):
     diretor = input("Digite o nome do diretor do filme: ")
     data_estreia = input("Digite a data de estreia do filme (DD/MM/AAAA): ")
     horario_exibicao = input("Digite o horario de exibicao do filme (HH:MM): ")
-    valor_ingresso = float(input("Digite o valor do ingresso do filme: "))
     generos = input("Digite os generos do filme (separados por virgulas): ").split(',')
-    classificacao_indicativa = int(input("Digite a classificacao indicativa do filme: "))
+    while True:
+        try:
+            valor_ingresso = float(input("Digite o valor do ingresso do filme: "))
+            classificacao_indicativa = int(input("Digite a classificacao indicativa do filme: "))
+            break
+        except ValueError:
+            print("Digite o valor numerico corretamente.")
 
     if not salas_disponiveis:
         print("Nao ha salas disponiveis para exibir o filme.")
         return None
-
+    
     print("Salas disponiveis:")
     for i, sala in enumerate(salas_disponiveis):
         print(f"{i + 1}: {sala}")
