@@ -242,7 +242,7 @@ def listar_filmes(filmes):
         print("Opcao invalida.")
 # ============================================================================================#
 
-
+def gerenciar_salas(filmes, salas_disponiveis):
     while True:
         print("\nGerenciamento de Salas:")
         print("1: Listar salas disponiveis")
