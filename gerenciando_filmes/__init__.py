@@ -91,10 +91,18 @@ def atualizar_filme(filmes, salas_disponiveis):
                 f"Nova data de estreia (atual: {filme_escolhido['data_estreia']}, formato DD/MM/AAAA): ")
             novo_horario_exibicao = input(
                 f"Novo horario de exibicao (atual: {filme_escolhido['horario_exibicao']}, formato HH:MM): ")
-            novo_valor_ingresso = float(
-                input(f"Novo valor do ingresso (atual: R${filme_escolhido['valor_ingresso']}): "))
+            while True:
+                try:
+                    novo_valor_ingresso = float(
+                         input(f"Novo valor do ingresso (atual: R${filme_escolhido['valor_ingresso']}): "))
+                    nova_classificacao_indicativa = int(
+                         input(f"Nova classificacao indicativa (atual: {filme_escolhido['classificacao_indicativa']}): "))
+                    break
+                except (ValueErro):
+                    print("Escreva o valor número correto")
             novos_generos = input(
                 f"Novos generos do filme (atual: {', '.join(filme_escolhido['generos'])}, separados por virgulas): ").split(',')
+            
             nova_classificacao_indicativa = int(
                 input(f"Nova classificacao indicativa (atual: {filme_escolhido['classificacao_indicativa']}): "))
 
