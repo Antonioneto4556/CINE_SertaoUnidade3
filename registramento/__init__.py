@@ -21,15 +21,20 @@ def cadastro(usuarios, admin_logado):
 
 
 def cadastrar_admin(usuarios, admin_logado):
-    if not admin_logado:
-        print("Acesso negado. Faca login como administrador.")
-        return None
+    while True:
+        if not admin_logado:
+            print("Acesso negado. Faca login como administrador.")
+            return None
 
-    nome = input("Digite o nome do novo administrador: ").strip()
-    senha = input("Digite a senha do novo administrador: ").strip()
-    usuarios["admins"].append({"nome": nome, "senha": senha})
-    print(f"Administrador '{nome}' cadastrado com sucesso!")
-    return {"nome": nome, "senha": senha}
+        nome = input("Digite o nome do novo administrador: ").strip()
+        nome_existente = any(cliente['nome'] == nome for cliente in usuarios['clientes'])
+        if nome_existente:
+            print(f"Nome '{nome}' ja esta em uso. Por favor, escolha um nome diferente.")
+            continue
+        senha = input("Digite a senha do novo administrador: ").strip()
+        usuarios["admins"].append({"nome": nome, "senha": senha})
+        print(f"Administrador '{nome}' cadastrado com sucesso!")
+        return {"nome": nome, "senha": senha}, admin_logado
 # ============================================================================================#
 
 
@@ -41,9 +46,13 @@ def cadastrar_cliente(usuarios):
         if nome_existente:
             print(f"Nome '{nome}' ja esta em uso. Por favor, escolha um nome diferente.")
             continue
-
+        while True:
+            try:
+                idade = int(input("Digite sua idade: "))
+                break
+            except ValueError:
+                print("Idade invalida. Por favor, insira um numero inteiro para a idade.")
         senha = input("Digite sua senha: ").strip()
-        idade = int(input("Digite sua idade: "))
         carteira_estudante = input("Possui carteira de estudante? (s/n): ").lower() == 's'
 
         novo_cliente = {
