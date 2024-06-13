@@ -19,7 +19,7 @@ filmes = [
         "horario_exibicao": "18:00",
         "valor_ingresso": 25.00,
         "sala": "Sala 1",
-        "capacidade_sala": 10,
+        "capacidade_sala": 120,
         "generos": ["Ação", "Aventura", "Ficção Científica"],
         "classificacao_indicativa": 12,
         "ingressos_vendidos": 0
@@ -31,7 +31,7 @@ filmes = [
         "horario_exibicao": "18:00",
         "valor_ingresso": 45.00,
         "sala": "Sala 2",
-        "capacidade_sala": 100,
+        "capacidade_sala": 120,
         "generos": ["Ação", "Aventura", "Ficção Científica"],
         "classificacao_indicativa": 16,
         "ingressos_vendidos": 0
