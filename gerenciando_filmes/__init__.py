@@ -236,7 +236,7 @@ def listar_filmes(filmes):
 def gerenciar_salas(salas_disponiveis, filmes):
     while True:
         print("\nGerenciamento de Salas:")
-        print("1: Listar salas indisponiveis")
+        print("1: Listar salas disponiveis")
         print("2: Adicionar nova sala")
         print("3: Remover sala")
         print("0: Voltar")
