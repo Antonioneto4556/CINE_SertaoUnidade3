@@ -233,19 +233,21 @@ def listar_filmes(filmes):
 # ============================================================================================#
 
 
-def gerenciar_salas(salas_disponiveis):
+def gerenciar_salas(salas_disponiveis, filmes):
     while True:
         print("\nGerenciamento de Salas:")
-        print("1: Listar salas disponiveis")
+        print("1: Listar salas indisponiveis")
         print("2: Adicionar nova sala")
         print("3: Remover sala")
         print("0: Voltar")
         opcao_sala = input("Escolha uma opcao: ").strip()
 
         if opcao_sala == '1':
+            salas_ocupadas = {filme['sala'] for filme in filmes}
+            salas_livres = [sala for sala in salas_disponiveis if sala not in salas_ocupadas]
             print("\nSalas disponiveis:")
-            for sala in salas_disponiveis:
-                print(sala)
+            print(salas_livres)
+
         elif opcao_sala == '2':
             nova_sala = input("Digite o nome da nova sala: ").strip()
             if nova_sala in salas_disponiveis:
