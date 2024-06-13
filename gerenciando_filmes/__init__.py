@@ -103,9 +103,6 @@ def atualizar_filme(filmes, salas_disponiveis):
             novos_generos = input(
                 f"Novos generos do filme (atual: {', '.join(filme_escolhido['generos'])}, separados por virgulas): ").split(',')
             
-            nova_classificacao_indicativa = int(
-                input(f"Nova classificacao indicativa (atual: {filme_escolhido['classificacao_indicativa']}): "))
-
             print(f"Salas disponiveis (atual: {filme_escolhido['sala']}):")
             for i, sala in enumerate(salas_disponiveis):
                 print(f"{i + 1}: {sala}")
