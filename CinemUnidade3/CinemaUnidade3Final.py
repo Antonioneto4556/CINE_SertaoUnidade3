@@ -67,7 +67,7 @@ while True:
                     gerenciando_filmes.listar_filmes(filmes)
                     print("Filmes listados com sucesso.")
                 elif sub_opcao == '6':
-                    gerenciando_filmes.gerenciar_salas(filmes)
+                    gerenciando_filmes.gerenciar_salas(filmes, salas_disponiveis)
                     print("Sala do filme atualizada com sucesso.")
                 elif sub_opcao == '7':
                     gerenciando_filmes.gerenciar_generos(filmes, admin_logado)
