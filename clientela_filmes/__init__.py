@@ -1,8 +1,6 @@
 import pessoas_perfil
 
 def exibir_filmes_em_cartaz(filmes):
-    filmes_ordenados = sorted(filmes, key=lambda x: x['ingressos_vendidos'], reverse=True)
-
     def truncar(texto, limite):
         return texto if len(texto) <= limite else texto[:limite - 3] + '...'
 
@@ -10,7 +8,7 @@ def exibir_filmes_em_cartaz(filmes):
     print("=--=" * 17)
     print(f"| \033[1:95m{'Titulo':<{20}}\033[m | \033[1:95m{'Diretor':<{15}}\033[m | \033[1:95m{'Generos':<{20}}\033[m |")
     print("=--=" * 17)
-    for filme in filmes_ordenados[:5]:
+    for filme in filmes:
         titulo = truncar(filme['titulo'], 20)
         diretor = truncar(filme['diretor'], 15)
         generos = truncar(', '.join(filme['generos']), 20)
