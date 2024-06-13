@@ -37,16 +37,16 @@ def comprar_ingresso(cliente_logado, filmes):
                 return
             quantidade = int(input("Quantos ingressos você deseja comprar? "))
             if quantidade <= 0:
-                print("Quantidade invalida.")
+                print("\033[91mQuantidade invalida.\033[m")
                 return
             if quantidade > filme_escolhido['capacidade_sala']:
-                print("Quantidade maior que a capacidade da sala.")
+                print("\033[91mQuantidade maior que a capacidade da sala.\033[m")
                 return
 
             total = quantidade * filme_escolhido['valor_ingresso']
             if cliente_logado['carteira_estudante']:
                 total *= 0.5
-            print(f"Valor total da compra: R${total:.2f}")
+            print(f"Valor total da compra:\033[92m R${total:.2f}\033[m")
 
             confirma = input("Confirma a compra? (s/n): ").strip().lower()
             if confirma == 's':
@@ -57,11 +57,11 @@ def comprar_ingresso(cliente_logado, filmes):
                 filme_escolhido['ingressos_vendidos'] += quantidade
                 filme_escolhido['capacidade_sala'] -= quantidade
                 pessoas_perfil.salvar_ingressos_cliente(cliente_logado)
-                print("Compra realizada com sucesso!")
+                print("\033[92mCompra realizada com sucesso!\033[m")
             else:
-                print("Compra cancelada.")
+                print("\033[94mCompra cancelada.\033[m")
         else:
-            print("Filme invalido.")
+            print("\033[91mFilme invalido.\033[m")
     except ValueError:
-        print("Entrada invalida. Por favor, insira um numero valido.")
+        print("\033[91mEntrada invalida. Por favor, insira um numero valido.\033[m")
 # ============================================================================================#
