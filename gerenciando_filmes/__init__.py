@@ -233,7 +233,6 @@ def listar_filmes(filmes):
 # ============================================================================================#
 
 
-def gerenciar_salas(salas_disponiveis, filmes):
     while True:
         print("\nGerenciamento de Salas:")
         print("1: Listar salas disponiveis")
