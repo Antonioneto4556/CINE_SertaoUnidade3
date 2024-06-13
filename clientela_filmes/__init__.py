@@ -2,8 +2,11 @@ import pessoas_perfil
 
 def exibir_filmes_em_cartaz(filmes):
     def truncar(texto, limite):
-        return texto if len(texto) <= limite else texto[:limite - 3] + '...'
-
+        if len(texto) <= limite:
+            return texto
+        else:
+            return texto[:limite - 3] + '...'
+            
     print(f"\n\033[1:95mFilmes em Cartaz: \033[m")
     print("=--=" * 17)
     print(f"| \033[1:95m{'Titulo':<{20}}\033[m | \033[1:95m{'Diretor':<{15}}\033[m | \033[1:95m{'Generos':<{20}}\033[m |")
