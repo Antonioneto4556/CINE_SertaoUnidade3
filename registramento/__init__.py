@@ -34,23 +34,27 @@ def cadastrar_admin(usuarios, admin_logado):
 
 
 def cadastrar_cliente(usuarios):
-    nome = input("Digite seu nome: ").strip()
-    senha = input("Digite sua senha: ").strip()
-    idade = int(input("Digite sua idade: "))
-    carteira_estudante = input("Possui carteira de estudante? (s/n): ").lower() == 's'
-    usuarios["clientes"].append({
-        "nome": nome,
-        "senha": senha,
-        "idade": idade,
-        "carteira_estudante": carteira_estudante,
-        "ingressos_comprados": []
-    })
-    print(f"Usuario '{nome}' cadastrado com sucesso!")
-    return {
-        "nome": nome,
-        "senha": senha,
-        "idade": idade,
-        "carteira_estudante": carteira_estudante,
-        "ingressos_comprados": []
+    while True:
+        nome = input("Digite seu nome: ").strip()
+        nome_existente = any(cliente['nome'] == nome for cliente in usuarios['clientes'])
+
+        if nome_existente:
+            print(f"Nome '{nome}' ja esta em uso. Por favor, escolha um nome diferente.")
+            continue
+
+        senha = input("Digite sua senha: ").strip()
+        idade = int(input("Digite sua idade: "))
+        carteira_estudante = input("Possui carteira de estudante? (s/n): ").lower() == 's'
+
+        novo_cliente = {
+            "nome": nome,
+            "senha": senha,
+            "idade": idade,
+            "carteira_estudante": carteira_estudante,
+            "ingressos_comprados": []
         }
+
+        usuarios["clientes"].append(novo_cliente)
+        print(f"Usuario '{nome}' cadastrado com sucesso!")
+        return novo_cliente
 # ============================================================================================#
