@@ -2,8 +2,7 @@ def entrar(usuarios):
     while True:
         print("\033[1:7:93:40m(1) Login Cliente            \033[m")
         print("\033[1:7:93:40m(2) Login Admin              \033[m")
-        print("\033[1:7:93:40m(3) Sair do perfil           \033[m")
-        print("\033[1:7:93:40m(4) Voltar ao Menu Principal \033[m")
+        print("\033[1:7:93:40m(0) Voltar ao Menu Principal \033[m")
         opcao = input("\033[92mEscolha uma opcao: \033[m")
         print(f"\033[1:7:97:40m Opcao ({opcao}) selecionada \033[m")
         if opcao == '1':
@@ -26,10 +25,7 @@ def entrar(usuarios):
             print("\033[91mNome ou senha incorretos.\033[m")
             return "admin", None
 
-        elif opcao == '3':
-            return None, None
-
-        elif opcao == '4':
+        elif opcao == '0':
             return "voltar", None
 
         else:
