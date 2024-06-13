@@ -17,9 +17,9 @@ filmes = [
         "diretor": "Joss Whedon",
         "data_estreia": "08/08/2024",
         "horario_exibicao": "18:00",
-        "valor_ingresso": 25.00,
+        "valor_ingresso": 50.00,
         "sala": "Sala 1",
-        "capacidade_sala": 120,
+        "capacidade_sala": 10,
         "generos": ["Ação", "Aventura", "Ficção Científica"],
         "classificacao_indicativa": 12,
         "ingressos_vendidos": 0
@@ -29,16 +29,28 @@ filmes = [
         "diretor": "Japones que não sei o nome",
         "data_estreia": "04/05/2024",
         "horario_exibicao": "18:00",
-        "valor_ingresso": 45.00,
+        "valor_ingresso": 50.00,
         "sala": "Sala 2",
-        "capacidade_sala": 120,
-        "generos": ["Ação", "Aventura", "Ficção Científica"],
-        "classificacao_indicativa": 16,
+        "capacidade_sala": 100,
+        "generos": ["Ação", "Aventura", "Ficção Científica", "Monstros"],
+        "classificacao_indicativa": 14,
+        "ingressos_vendidos": 0
+    },
+    {
+        "titulo": "Lookisn",
+        "diretor": "Ptj",
+        "data_estreia": "11/12/2024",
+        "horario_exibicao": "20:00",
+        "valor_ingresso": 50.00,
+        "sala": "Sala 3",
+        "capacidade_sala": 100,
+        "generos": ["Ação", "Lutas", "Artes-Marcias", "Animação"],
+        "classificacao_indicativa": 18,
         "ingressos_vendidos": 0
     }
 ]
 
-salas_disponiveis = ["Sala 3", "Sala 4", "Sala 5", "Sala 6", ]
+salas_disponiveis = ["Sala 4", "Sala 5", "Sala 6", "Sala 7"]
 cliente_logado = None
 admin_logado = None
 
