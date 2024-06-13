@@ -53,25 +53,18 @@ while True:
                 sub_opcao = input("Escolha uma opção: ").strip()
                 if sub_opcao == '1':
                     gerenciando_filmes.cadastrar_filme(filmes, salas_disponiveis)
-                    print("Filme cadastrado com sucesso.")
                 elif sub_opcao == '2':
                     gerenciando_filmes.atualizar_filme(filmes, salas_disponiveis)
-                    print("Filme atualizado com sucesso.")
                 if sub_opcao == '3':
                     gerenciando_filmes.buscar_filmes(filmes)
-                    print("Filme selecionado salvo.")
                 elif sub_opcao == '4':
                     gerenciando_filmes.remover_filme(filmes, salas_disponiveis)
-                    print("Filme removido com sucesso.")
                 elif sub_opcao == '5':
                     gerenciando_filmes.listar_filmes(filmes)
-                    print("Filmes listados com sucesso.")
                 elif sub_opcao == '6':
                     gerenciando_filmes.gerenciar_salas(filmes, salas_disponiveis)
-                    print("Sala do filme atualizada com sucesso.")
                 elif sub_opcao == '7':
                     gerenciando_filmes.gerenciar_generos(filmes, admin_logado)
-                    print("Generos do filme atualizados com sucesso.")
                 elif sub_opcao == '8':
                     gerenciando_filmes.visualizar_vendas_ingressos(filmes)
                 elif sub_opcao == '9':
@@ -79,9 +72,9 @@ while True:
                 elif sub_opcao == '0':
                     break
                 else:
-                    print("Opção inválida.")
+                    print("\033[91mOpção inválida.\033[m")
         else:
-            print("Acesso negado. Faça login como administrador para acessar o gerenciamento de filmes.")
+            print("\033[91mAcesso negado\033[m. \033[92mFaça login como administrador para acessar o gerenciamento de filmes.\033[m")
 
     elif escolha == '2':
         clientela_filmes.exibir_filmes_em_cartaz(filmes)
@@ -90,7 +83,7 @@ while True:
         if cliente_logado:
             clientela_filmes.comprar_ingresso(cliente_logado, filmes)
         else:
-            print("Você precisa estar logado como cliente para comprar ingressos.")
+            print("\033[91mVocê precisa estar logado como cliente para comprar ingressos.\033[m")
 
     elif escolha == '4':
         registramento.cadastro(usuarios, admin_logado)
@@ -106,7 +99,7 @@ while True:
         if cliente_logado:
             pessoas_perfil.gerenciar_perfil(cliente_logado, filmes)
         else:
-            print("Você precisa estar logado como cliente para acessar perfil.")
+            print("\033[91mVocê precisa estar logado como cliente para acessar perfil.\033[m")
 
     elif escolha == '0':
         print("Saindo...")
