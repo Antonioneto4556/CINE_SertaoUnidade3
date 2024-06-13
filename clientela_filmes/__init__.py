@@ -36,7 +36,7 @@ def comprar_ingresso(cliente_logado, filmes):
             if cliente_logado['idade'] < filme_escolhido['classificacao_indicativa']:
                 print("Desculpe, voce nao tem idade suficiente para assistir a este filme.")
                 return
-            quantidade = int(input("Quantos ingressos você deseja comprar? "))
+            quantidade = int(input("Quantos ingressos voce deseja comprar? "))
             if quantidade <= 0:
                 print("\033[91mQuantidade invalida.\033[m")
                 return
