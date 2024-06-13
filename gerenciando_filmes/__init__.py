@@ -311,18 +311,21 @@ def visualizar_vendas_ingressos(filmes):
     for i, filme in enumerate(filmes):
         print(f"{i + 1}: {filme['titulo']}")
 
-    escolha_filme = int(input("Escolha o numero do filme que deseja visualizar o historico de vendas: ")) - 1
-    if 0 <= escolha_filme < len(filmes):
-        filme_escolhido = filmes[escolha_filme]
-        filename = f"{filme_escolhido['titulo']}_historico_compras.txt"
-        if os.path.exists(filename):
-            with open(filename, 'r') as f:
-                print(f"\nHistorico de vendas para {filme_escolhido['titulo']}:")
-                print(f.read())
+    try:
+        escolha_filme = int(input("Escolha o numero do filme que deseja visualizar o historico de vendas: ")) - 1
+        if 0 <= escolha_filme < len(filmes):
+            filme_escolhido = filmes[escolha_filme]
+            filename = f"{filme_escolhido['titulo'].replace(' ', '_')}_historico_compras.txt"
+            if os.path.exists(filename):
+                with open(filename, 'r') as f:
+                    print(f"\nHistorico de vendas para {filme_escolhido['titulo']}:")
+                    print(f.read())
+            else:
+                print(f"Historico de vendas para {filme_escolhido['titulo']} nao encontrado.")
         else:
-            print(f"Historico de vendas para {filme_escolhido['titulo']} nao encontrado.")
-    else:
-        print("Opcao invalida.")
+            print("Opcao invalida.")
+    except ValueError:
+        print("Entrada invalida. Por favor, insira um numero valido.")
 # ============================================================================================#
 
 
